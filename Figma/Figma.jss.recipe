@@ -5,9 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of DynamicUniversalApp and imports it into your JSS.</string>
+	<string>Downloads the latest version of Figma and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.jss-recipes.jss.DynamicUniversalApp</string>
+	<string>com.github.jss-recipes.jss.Figma</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
@@ -19,7 +19,7 @@
 		<key>GROUP_TEMPLATE</key>
 		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>DynamicUniversalApp</string>
+		<string>Figma</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
@@ -32,7 +32,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>jonmacguru-recipes.pkg.DynamicUniversalApp</string>
+	<string>jonmacguru-recipes.pkg.Figma</string>
 	<key>Process</key>
 	<array>
 		<dict>
