@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Recipe automatically generated from com.github.dataJAR-recipes.jss.Figma by JamfRecipeMaker</string>
+	<string>Recipe automatically generated from jonmacguru-recipes.pkg.Figma by JamfRecipeMaker</string>
 	<key>Identifier</key>
 	<string>jonmacguru-recipes.jamf.Figma</string>
 	<key>Input</key>
@@ -36,7 +36,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.dataJAR-recipes.pkg.Figma</string>
+	<string>jonmacguru-recipes.pkg.Figma</string>
 	<key>Process</key>
 	<array>
 		<dict>
