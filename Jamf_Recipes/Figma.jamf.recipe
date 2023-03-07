@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Recipe automatically generated from jonmacguru-recipes.pkg.Figma by JamfRecipeMaker</string>
+	<string>Recipe automatically generated from com.github.dataJAR-recipes.pkg.Figma by JamfRecipeMaker</string>
 	<key>Identifier</key>
-	<string>jonmacguru-recipes.jamf.Figma</string>
+	<string>com.github.autopkg.grahampugh-recipes.jamf.Figma</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Productivity</string>
+		<string>Applications</string>
 		<key>GROUP_NAME</key>
-		<string>Figma-update-smart</string>
+		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
 		<string>JamfSmartGroupTemplate.xml</string>
 		<key>NAME</key>
@@ -21,9 +21,9 @@
 		<key>POLICY_NAME</key>
 		<string>Install Latest %NAME%</string>
 		<key>POLICY_TEMPLATE</key>
-		<string>JamfPolicyTemplate-noSS.xml</string>
+		<string>JamfPolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Design, prototype, and gather feedback all in one place with Figma.</string>
+		<string></string>
 		<key>SELF_SERVICE_DISPLAY_NAME</key>
 		<string>Install Latest %NAME%</string>
 		<key>SELF_SERVICE_ICON</key>
@@ -36,7 +36,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>jonmacguru-recipes.pkg.Figma</string>
+	<string>com.github.dataJAR-recipes.pkg.Figma</string>
 	<key>Process</key>
 	<array>
 		<dict>
