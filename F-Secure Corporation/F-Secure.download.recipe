@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of F-Secure.</string>
 	<key>Identifier</key>
@@ -11,12 +11,12 @@
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
-		<string>F-Secure_MDR_mac_Installer</string>
+		<string>F-Secure Mac Protection</string>
 		<key>NAME</key>
 		<string>F-Secure</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
