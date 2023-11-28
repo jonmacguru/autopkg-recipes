@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Recipe automatically generated from jonmacguru-recipes.download.F-Secure by JamfRecipeMaker</string>
+	<string>Recipe automatically generated from jonmacguru-recipes.pkg.F-Secure by JamfRecipeMaker</string>
 	<key>Identifier</key>
 	<string>jonmacguru-recipes.jamf.F-Secure</string>
 	<key>Input</key>
@@ -31,12 +31,12 @@
 		<key>TESTING_GROUP_NAME</key>
 		<string>Testing</string>
 		<key>UPDATE_PREDICATE</key>
-		<string>pkg_uploaded == False</string>
+		<string>pkg_uploaded == True</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>jonmacguru-recipes.download.F-Secure</string>
+	<string>jonmacguru-recipes.pkg.F-Secure</string>
 	<key>Process</key>
 	<array>
 		<dict>
