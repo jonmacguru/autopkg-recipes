@@ -44,6 +44,10 @@
 			<dict>
 				<key>pkg_category</key>
 				<string>%CATEGORY%</string>
+				<key>aws_cdp_mode</key>
+				<string>True</string>
+				<key>S3_BUCKET_NAME</key>
+				<string>jamf88990816705044739d23d43e0d3a4487</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
