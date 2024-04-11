@@ -21,7 +21,7 @@
 		<key>POLICY_NAME</key>
 		<string>Install Latest %NAME%</string>
 		<key>POLICY_TEMPLATE</key>
-		<string>JamfPolicyTemplate.xml</string>
+		<string>JamfPolicyTemplate-noSS.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
 		<string></string>
 		<key>SELF_SERVICE_DISPLAY_NAME</key>
@@ -31,7 +31,7 @@
 		<key>TESTING_GROUP_NAME</key>
 		<string>Testing</string>
 		<key>UPDATE_PREDICATE</key>
-		<string>pkg_uploaded == False</string>
+		<string>pkg_uploaded == True</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
