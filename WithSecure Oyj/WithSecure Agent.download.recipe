@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.pkg</string>
 				<key>url</key>
-				<string>https://mdr-artifacts.rds.f-secure.com/macos/latest/F-Secure_MDR_mac_Installer.pkg</string>
+				<string>https:/download.withsecure.com/countercept/macos/latest/WithSecure-Countercept-Agent.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
