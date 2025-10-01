@@ -71,13 +71,13 @@
 			<string>AppDmgVersioner</string>
 		</dict>
 		<dict>
-      		<key>Processor</key>
-      		<string>DmgMounter</string>
       		<key>Arguments</key>
       			<dict>
-        		<key>dmg_path</key>
-        		<string>%pathname%</string>
+        			<key>dmg_path</key>
+        			<string>%pathname%</string>
       			</dict>
+      		<key>Processor</key>
+      		<string>DmgMounter</string>
       	</dict>
 	</array>
 </dict>
