@@ -50,6 +50,15 @@
 			<key>Processor</key>
 			<string>FileFinder</string>
 		</dict>
+			<dict>
+  		<key>Processor</key>
+  		<string>DmgMounter</string>
+  		<key>Arguments</key>
+  			<dict>
+    			<key>dmg_path</key>
+    		<string>%found_filename%</string>
+  			</dict>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -69,15 +78,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>AppDmgVersioner</string>
-		</dict>
-		<dict>
-  		<key>Processor</key>
-  		<string>DmgMounter</string>
-  		<key>Arguments</key>
-  			<dict>
-    			<key>dmg_path</key>
-    		<string>%RECIPE_CACHE_DIR%/Apidog*.dmg</string>
-  			</dict>
 		</dict>
 		<dict>
   		<key>Processor</key>
