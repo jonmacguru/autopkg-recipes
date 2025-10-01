@@ -22,10 +22,6 @@
 		<dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
-			<dict>
-				<key>Arguments</key>
-				<string>%RECIPE_CACHE_DIR%/Apidog*.dmg</string>
-			</dict>
 		</dict>
 	</array>
 </dict>
