@@ -2,26 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.4.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Apidog. To download for Intel, leave ARCH empty.</string>
+	<string>Downloads the latest version of Apidog.</string>
 	<key>Identifier</key>
 	<string>jonmacguru-recipes.download.Apidog</string>
 	<key>Input</key>
 	<dict>
-		<key>ARCH</key>
-		<string>-arm64</string>
 		<key>NAME</key>
 		<string>Apidog</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://file-assets.apidog.com/download/Apidog-macOS%ARCH%-latest.zip</string>
+				<string>https://file-assets.apidog.com/download/Apidog-macOS-arm64-latest.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -30,7 +32,7 @@
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
-		<dict>
+				<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>archive_path</key>
@@ -63,12 +65,23 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%found_filename%/Apidog.app</string>
+				<string>%pathname%/Apidog.app</string>
 				<key>requirement</key>
-				<string> identifier "com.apidog.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8554M245SA"</string>
+				<string>identifier "com.apidog.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8554M245SA"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Apidog.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
