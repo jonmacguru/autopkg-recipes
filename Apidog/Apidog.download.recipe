@@ -70,15 +70,6 @@
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
 		</dict>
-		<dict>
-  		<key>Processor</key>
-  		<string>FileFinder</string>
-  		<key>Arguments</key>
-  			<dict>
-   			 <key>pattern</key>
-    		<string>%pathname%/Apidog.app</string>
-  			</dict>
-		</dict>
 	</array>
 </dict>
 </plist>
