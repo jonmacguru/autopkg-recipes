@@ -21,9 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.zip</string>
+				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://file-assets.apidog.com/download/Apidog-macOS-arm64-latest.zip</string>
+				<string>https://file-assets.apidog.com/download/2.7.39/Apidog-macOS-arm64-2.7.39.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
