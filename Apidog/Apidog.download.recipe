@@ -70,6 +70,24 @@
 			<key>Processor</key>
 			<string>AppDmgVersioner</string>
 		</dict>
+		<dict>
+  		<key>Processor</key>
+  		<string>DmgMounter</string>
+  		<key>Arguments</key>
+  			<dict>
+    			<key>dmg_path</key>
+    		<string>%found_filename%</string>
+  			</dict>
+		</dict>
+		<dict>
+  		<key>Processor</key>
+  		<string>FileFinder</string>
+  		<key>Arguments</key>
+  			<dict>
+   			 <key>pattern</key>
+    		<string>%pathname%/Apidog.app</string>
+  			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>
