@@ -25,7 +25,7 @@
       		<key>Arguments</key>
       		<dict>
         		<key>app_path</key>
-        		<string>%RECIPE_CACHE_DIR%/Apidog/Apidog.app</string>
+        		<string>%pathname%/Apidog.app</string>
         		<key>pkg_name</key>
         		<string>Apidog</string>
       		</dict>
