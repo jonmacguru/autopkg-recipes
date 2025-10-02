@@ -1,5 +1,5 @@
 Description: Download Apidog ZIP for macOS
-Identifier: jonmacguru-recipes.download.apidog
+Identifier: com.github.jonmacguru.download.apidog
 Input:
   NAME: Apidog
   DOWNLOAD_URL: https://file-assets.apidog.com/download/Apidog-macOS-arm64-latest.zip

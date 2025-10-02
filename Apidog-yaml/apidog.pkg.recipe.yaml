@@ -1,8 +1,8 @@
 Description: Build PKG from Apidog DMG
-Identifier: jonmacguru-recipes.pkg.apidog
+Identifier: com.github.jonmacguru.pkg.apidog
 Input:
   NAME: Apidog
-ParentRecipe: jonmacguru-recipes.download.apidog
+ParentRecipe: com.github.jonmacguru.download.apidog
 MinimumVersion: "2.3"
 Process:
   - Processor: Unarchiver

@@ -1,8 +1,8 @@
 Description: Upload Apidog PKG to JAMF
-Identifier: jonmacguru-recipes.jamf.apidog
+Identifier: com.github.jonmacguru.jamf.apidog
 Input:
   NAME: Apidog
-ParentRecipe: cjonmacguru-recipes.pkg.apidog
+ParentRecipe: com.github.jonmacguru.pkg.apidog
 MinimumVersion: "2.3"
 Process:
   - Processor: JamfUploader
