@@ -1,0 +1,13 @@
+Description: Upload Apidog PKG to JAMF
+Identifier: jonmacguru-recipes.jamf.apidog
+Input:
+  NAME: Apidog
+ParentRecipe: cjonmacguru-recipes.pkg.apidog
+MinimumVersion: "2.3"
+Process:
+  - Processor: JamfUploader
+    Arguments:
+      pkg_path: %RECIPE_CACHE_DIR%/Apidog.pkg
+      category: "Engineering"
+      policy_name: "Install Apidog"
+      upload: true
