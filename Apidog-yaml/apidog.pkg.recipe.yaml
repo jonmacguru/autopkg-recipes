@@ -7,9 +7,9 @@ MinimumVersion: "2.3"
 Process:
   - Processor: Unarchiver
     Arguments:
-      archive_path: %RECIPE_CACHE_DIR%/downloads/Apidog.zip
-      destination_path: %RECIPE_CACHE_DIR%/downloads/
+      archive_path: "%RECIPE_CACHE_DIR%/downloads/Apidog.zip"
+      destination_path: "%RECIPE_CACHE_DIR%/downloads/"
   - Processor: AppPkgCreator
     Arguments:
-      app_path: %RECIPE_CACHE_DIR%/downloads/Apidog.dmg
-      pkg_path: %RECIPE_CACHE_DIR%/Apidog.pkg
+      app_path: "%RECIPE_CACHE_DIR%/downloads/Apidog.dmg"
+      pkg_path: "%RECIPE_CACHE_DIR%/Apidog.pkg"

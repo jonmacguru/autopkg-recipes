@@ -7,7 +7,7 @@ MinimumVersion: "2.3"
 Process:
   - Processor: URLDownloader
     Arguments:
-      url: %DOWNLOAD_URL%
+      url: "%DOWNLOAD_URL%"
       filename: Apidog.zip
       COMPUTE_HASHES: True
   - Processor: EndOfCheckPhase

@@ -7,7 +7,7 @@ MinimumVersion: "2.3"
 Process:
   - Processor: JamfUploader
     Arguments:
-      pkg_path: %RECIPE_CACHE_DIR%/Apidog.pkg
+      pkg_path: "%RECIPE_CACHE_DIR%/Apidog.pkg"
       category: "Engineering"
       policy_name: "Install Apidog"
       upload: true
