@@ -53,7 +53,7 @@
             <string>AppPkgCreator</string>
             <key>Arguments</key>
             <dict>
-                <key>app_path</key>
+                <key>dmg_path</key>
                 <string>%RECIPE_CACHE_DIR%/Apidog*.dmg</string>
                 <key>pkg_path</key>
                 <string>%RECIPE_CACHE_DIR%/Apidog.pkg</string>
