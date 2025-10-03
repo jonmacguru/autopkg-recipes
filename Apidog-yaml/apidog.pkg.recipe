@@ -32,26 +32,22 @@
     		<key>Processor</key>
     		<string>FileFinder</string>
     		<key>Arguments</key>
-    	<dict>
-        	<!-- Search the cache directory for a file ending in ".dmg". -->
-        	<key>pattern</key>
-        	<string>%RECIPE_CACHE_DIR%/downloads/*.dmg</string>
-    	</dict>
-    	<dict>
-    		<key>Processor</key>
-    		<string>FileMover</string>
-    		<key>Arguments</key>
     		<dict>
-        	<!-- Use the path of the found file as the source. -->
-        	<key>source</key>
-        <string>%found_filename%</string>
-        <!-- Set the target with a new, standardized name. -->
-        <!-- Variables like %NAME% and %version% are commonly used here. -->
-        <key>target</key>
-        <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-    </dict>
-</dict>
-</dict>
+        		<key>pattern</key>
+        		<string>%RECIPE_CACHE_DIR%/downloads/*.dmg</string>
+    		</dict>
+    		<dict>
+    			<key>Processor</key>
+    			<string>FileMover</string>
+    			<key>Arguments</key>
+    			<dict>
+        			<key>source</key>
+        			<string>%found_filename%</string>
+        			<key>target</key>
+        			<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+    			</dict>
+			</dict>
+	</dict>
         <dict>
             <key>Processor</key>
             <string>AppPkgCreator</string>
