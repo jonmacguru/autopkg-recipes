@@ -1,13 +1,39 @@
-Description: Download Apidog ZIP for macOS
-Identifier: com.github.jonmacguru.download.apidog
-Input:
-  NAME: Apidog
-  DOWNLOAD_URL: https://file-assets.apidog.com/download/Apidog-macOS-arm64-latest.zip
-MinimumVersion: "2.3"
-Process:
-  - Processor: URLDownloader
-    Arguments:
-      url: "%DOWNLOAD_URL%"
-      filename: Apidog.zip
-      COMPUTE_HASHES: True
-  - Processor: EndOfCheckPhase
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download Apidog ZIP for macOS</string>
+    <key>Identifier</key>
+    <string>com.github.jonmacguru.download.apidog</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Apidog</string>
+        <key>DOWNLOAD_URL</key>
+        <string>https://file-assets.apidog.com/download/Apidog-macOS-arm64-latest.zip</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+                <key>filename</key>
+                <string>Apidog.zip</string>
+                <key>COMPUTE_HASHES</key>
+                <true/>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>

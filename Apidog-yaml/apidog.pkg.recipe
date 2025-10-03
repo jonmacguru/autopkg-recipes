@@ -1,15 +1,44 @@
-Description: Build PKG from Apidog DMG
-Identifier: com.github.jonmacguru.pkg.apidog
-Input:
-  NAME: Apidog
-ParentRecipe: com.github.jonmacguru.download.apidog
-MinimumVersion: "2.3"
-Process:
-  - Processor: Unarchiver
-    Arguments:
-      archive_path: "%RECIPE_CACHE_DIR%/downloads/Apidog.zip"
-      destination_path: "%RECIPE_CACHE_DIR%/downloads/"
-  - Processor: AppPkgCreator
-    Arguments:
-      app_path: "%RECIPE_CACHE_DIR%/downloads/Apidog.dmg"
-      pkg_path: "%RECIPE_CACHE_DIR%/Apidog.pkg"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Build PKG from Apidog DMG</string>
+    <key>Identifier</key>
+    <string>com.github.jonmacguru.pkg.apidog</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Apidog</string>
+    </dict>
+    <key>ParentRecipe</key>
+    <string>com.github.jonmacguru.download.apidog</string>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>Unarchiver</string>
+            <key>Arguments</key>
+            <dict>
+                <key>archive_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/Apidog.zip</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>AppPkgCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>app_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/Apidog.dmg</string>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/Apidog.pkg</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
