@@ -54,7 +54,7 @@
             <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/Apidog*.dmg</string>
+                <string>%found_filename%</string>
                 <key>pkg_path</key>
                 <string>%RECIPE_CACHE_DIR%/Apidog.pkg</string>
             </dict>
