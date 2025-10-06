@@ -1,64 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Build PKG from Apidog DMG</string>
-    <key>Identifier</key>
-    <string>com.github.jonmacguru.pkg.apidog</string>
-    <key>Input</key>
+  <key>Description</key>
+  <string>Mounts DMG and packages Apidog app as PKG.</string>
+  <key>Identifier</key>
+  <string>com.github.jonmacguru.pkg.apidog</string>
+  <key>ParentRecipe</key>
+  <string>com.github.jonmacguru.download.apidog</string>
+  <key>Process</key>
+  <array>
     <dict>
-        <key>NAME</key>
-        <string>Apidog</string>
+      <key>Processor</key>
+      <string>AppPkgCreator</string>
+      <key>Arguments</key>
+      <dict>
+        <key>dmg_path</key>
+        <string>%RECIPE_CACHE_DIR%/Apidog.dmg</string>
+      </dict>
     </dict>
-    <key>ParentRecipe</key>
-    <string>com.github.jonmacguru.download.apidog</string>
-    <key>MinimumVersion</key>
-    <string>2.3</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>archive_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/Apidog.zip</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/</string>
-            </dict>
-        </dict>
-        <dict>
-    		<key>Processor</key>
-    		<string>FileFinder</string>
-    		<key>Arguments</key>
-    		<dict>
-        		<key>pattern</key>
-        		<string>%RECIPE_CACHE_DIR%/downloads/*.dmg</string>
-    		</dict>
-    	</dict>
-    		<dict>
-    			<key>Processor</key>
-    			<string>FileMover</string>
-    			<key>Arguments</key>
-    			<dict>
-        			<key>source</key>
-        			<string>%found_filename%</string>
-        			<key>target</key>
-        			<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-    			</dict>
-			</dict>
-        <dict>
-            <key>Processor</key>
-            <string>AppPkgCreator</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_path</key>
-                <string>%found_filename%</string>
-                <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/Apidog.pkg</string>
-            </dict>
-        </dict>
-    </array>
+  </array>
 </dict>
 </plist>

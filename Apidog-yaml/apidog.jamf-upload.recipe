@@ -1,37 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Upload Apidog PKG to JAMF</string>
-    <key>Identifier</key>
-    <string>com.github.jonmacguru.jamf.apidog</string>
-    <key>Input</key>
+  <key>Description</key>
+  <string>Upload the Apidog PKG to Jamf Pro.</string>
+  <key>Identifier</key>
+  <string>com.github.jonmacguru.jamf-upload.apidog</string>
+  <key>ParentRecipe</key>
+  <string>com.github.jonmacguru.pkg.apidog</string>
+  <key>Process</key>
+  <array>
     <dict>
-        <key>NAME</key>
-        <string>Apidog</string>
+      <key>Processor</key>
+      <string>JamfUploader</string>
+      <key>Arguments</key>
+      <dict>
+        <key>pkg_path</key>
+        <string>%RECIPE_CACHE_DIR%/Apidog.pkg</string>
+        <!-- Add Jamf Pro credentials and server URL here -->
+      </dict>
     </dict>
-    <key>ParentRecipe</key>
-    <string>com.github.jonmacguru.pkg.apidog</string>
-    <key>MinimumVersion</key>
-    <string>2.3</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>JamfUploader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/Apidog.pkg</string>
-                <key>category</key>
-                <string>Apps</string>
-                <key>policy_name</key>
-                <string>Install Apidog</string>
-                <key>upload</key>
-                <true/>
-            </dict>
-        </dict>
-    </array>
+  </array>
 </dict>
 </plist>
