@@ -21,7 +21,7 @@
       <key>Arguments</key>
       <dict>
         <key>dmg_path</key>
-        <string>%RECIPE_CACHE_DIR%/Apidog.dmg</string>
+        <string>%RECIPE_CACHE_DIR%/Apidog*.dmg</string>
       </dict>
     </dict>
   </array>
