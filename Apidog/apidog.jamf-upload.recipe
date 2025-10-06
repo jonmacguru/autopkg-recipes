@@ -8,6 +8,11 @@
   <string>com.github.jonmacguru.jamf-upload.apidog</string>
   <key>ParentRecipe</key>
   <string>com.github.jonmacguru.pkg.apidog</string>
+  <key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Apidog</string>
+	</dict>
   <key>Process</key>
   <array>
     <dict>
