@@ -33,6 +33,15 @@
         <string>%RECIPE_CACHE_DIR%</string>
       </dict>
     </dict>
+    <dict>
+      <key>Processor</key>
+      <string>MountDmg</string>
+      <key>Arguments</key>
+      <dict>
+        <key>dmg_path</key>
+        <string>%RECIPE_CACHE_DIR%/"Apidog*.dmg"</string>
+      </dict>
+    </dict>
   </array>
 </dict>
 </plist>
