@@ -6,6 +6,11 @@
   <string>Download and unzip Apidog zip file.</string>
   <key>Identifier</key>
   <string>com.github.jonmacguru.download.apidog</string>
+  <key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Apidog</string>
+	</dict>
   <key>Process</key>
   <array>
     <dict>
