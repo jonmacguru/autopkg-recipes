@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://file-assets.apidog.com/download/2.7.51/Apidog-macOS-arm64-2.7.51.dmg</string>
+				<string>https://file-assets.apidog.com/download/2.7.53/Apidog-macOS-arm64-2.7.53.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
