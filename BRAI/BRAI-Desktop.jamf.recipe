@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Builds the BRAI Desktop PKG, uploads it to Jamf Pro, and creates/updates a Self Service policy with JamfUploader.</string>
+    <key>Identifier</key>
+    <string>local.jamf.BRAIDesktop</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>BRAI Desktop</string>
+        <key>CATEGORY</key>
+        <string>Productivity</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Applications</string>
+        <key>POLICY_NAME</key>
+        <string>Install %NAME%</string>
+        <key>SELF_SERVICE_DISPLAY_NAME</key>
+        <string>%NAME%</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Installs or reinstalls %NAME% from Self Service.</string>
+        <key>POLICY_TEMPLATE</key>
+        <string>BRAI-Desktop-SelfService-Policy.xml</string>
+        <key>GROUP_NAME</key>
+        <string>All Managed Clients</string>
+        <key>ICON</key>
+        <string>%NAME%.png</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>ParentRecipe</key>
+    <string>local.pkg.BRAIDesktop</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_category</key>
+                <string>%CATEGORY%</string>
+                <key>pkg_path</key>
+                <string>%pkg_path%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>pkg_uploaded == False</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>policy_name</key>
+                <string>%POLICY_NAME%</string>
+                <key>policy_template</key>
+                <string>%RECIPE_DIR%/%POLICY_TEMPLATE%</string>
+                <key>icon</key>
+                <string>%ICON%</string>
+                <key>replace_policy</key>
+                <string>True</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
