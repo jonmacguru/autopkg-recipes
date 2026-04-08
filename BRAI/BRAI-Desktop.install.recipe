@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads and installs BRAI Desktop to /Applications.</string>
+    <string>Downloads and installs BR Skills to /Applications.</string>
     <key>Identifier</key>
     <string>local.install.BRAIDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>BRAI Desktop</string>
+        <string>BR Skills</string>
     </dict>
     <key>MinimumVersion</key>
     <string>2.3</string>

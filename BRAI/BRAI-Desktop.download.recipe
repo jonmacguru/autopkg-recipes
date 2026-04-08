@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest BRAI Desktop ZIP archive.</string>
+    <string>Downloads the latest BR Skills ZIP archive.</string>
     <key>Identifier</key>
     <string>local.download.BRAIDesktop</string>
     <key>Input</key>

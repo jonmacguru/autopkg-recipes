@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Builds the BRAI Desktop PKG, uploads it to Jamf Pro, and creates/updates a Self Service policy with JamfUploader.</string>
+    <string>Builds the BR Skill PKG, uploads it to Jamf Pro, and creates/updates a Self Service policy with JamfUploader.</string>
     <key>Identifier</key>
     <string>local.jamf.BRAIDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>BRAI Desktop</string>
+        <string>BR Skills</string>
         <key>CATEGORY</key>
         <string>Productivity</string>
         <key>POLICY_CATEGORY</key>
