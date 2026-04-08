@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Builds a PKG installer for BRAI Desktop.</string>
+    <string>Builds a PKG installer for BR Skills.</string>
     <key>Identifier</key>
     <string>local.pkg.BRAIDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>BRAI Desktop</string>
+        <string>BR Skills</string>
         <key>PKG_ID</key>
-        <string>com.yourorg.pkg.braidesktop</string>
+        <string>com.yourorg.pkg.brskills</string>
     </dict>
     <key>MinimumVersion</key>
     <string>2.3</string>
