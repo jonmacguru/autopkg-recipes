@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Builds the Claude Desktop PKG and uploads it to Jamf Pro.</string>
     <key>Identifier</key>
-    <string>local.jamf.ClaudeDesktop</string>
+    <string>jonmacguru-recipes.jamf.ClaudeDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -16,7 +16,7 @@
     <key>MinimumVersion</key>
     <string>2.3</string>
     <key>ParentRecipe</key>
-    <string>local.pkg.ClaudeDesktop</string>
+    <string>jonmacguru-recipes.download.ClaudeDesktop</string>
     <key>Process</key>
     <array>
         <dict>

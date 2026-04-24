@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads and installs Claude Desktop to /Applications.</string>
     <key>Identifier</key>
-    <string>local.install.ClaudeDesktop</string>
+    <string>jonmacguru-recipes.install.ClaudeDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -14,7 +14,7 @@
     <key>MinimumVersion</key>
     <string>2.3</string>
     <key>ParentRecipe</key>
-    <string>local.download.ClaudeDesktop</string>
+    <string>jonmacguru-recipes.download.ClaudeDesktop</string>
     <key>Process</key>
     <array>
         <dict>

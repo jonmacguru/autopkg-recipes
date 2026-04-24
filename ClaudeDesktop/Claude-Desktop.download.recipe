@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest Claude Desktop DMG using Anthropic's redirect URL.</string>
     <key>Identifier</key>
-    <string>local.download.ClaudeDesktop</string>
+    <string>jonmacguru-recipes.download.ClaudeDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
