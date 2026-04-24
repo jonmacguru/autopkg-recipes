@@ -5,18 +5,18 @@
     <key>Description</key>
     <string>Builds a PKG installer for Claude Desktop.</string>
     <key>Identifier</key>
-    <string>jonmacguru-recipes.pkg.ClaudeDesktop</string>
+    <string>jonmacguru.recipes.pkg.ClaudeDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>Claude Desktop</string>
         <key>PKG_ID</key>
-        <string>com.bottlerocket.claude-desktop</string>
+        <string>com.yourorg.pkg.claude-desktop</string>
     </dict>
     <key>MinimumVersion</key>
     <string>2.3</string>
     <key>ParentRecipe</key>
-    <string>jonmacguru-recipes.download.ClaudeDesktop</string>
+    <string>jonmacguru.recipes.download.ClaudeDesktop</string>
     <key>Process</key>
     <array>
         <dict>

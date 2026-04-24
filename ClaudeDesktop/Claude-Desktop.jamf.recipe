@@ -3,20 +3,30 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Builds the Claude Desktop PKG and uploads it to Jamf Pro.</string>
+    <string>Builds the Claude Desktop PKG, uploads it to Jamf Pro, and creates/updates a Self Service policy with the extracted app icon.</string>
     <key>Identifier</key>
-    <string>jonmacguru-recipes.jamf.ClaudeDesktop</string>
+    <string>jonmacguru.recipes.jamf.ClaudeDesktop</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>Claude Desktop</string>
         <key>CATEGORY</key>
         <string>Productivity</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Applications</string>
+        <key>POLICY_NAME</key>
+        <string>Install %NAME%</string>
+        <key>SELF_SERVICE_DISPLAY_NAME</key>
+        <string>%NAME%</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Installs or reinstalls %NAME% from Self Service.</string>
+        <key>POLICY_TEMPLATE</key>
+        <string>Claude-Desktop-SelfService-Policy.xml</string>
     </dict>
     <key>MinimumVersion</key>
     <string>2.3</string>
     <key>ParentRecipe</key>
-    <string>jonmacguru-recipes.download.ClaudeDesktop</string>
+    <string>jonmacguru.recipes.pkg.ClaudeDesktop</string>
     <key>Process</key>
     <array>
         <dict>
@@ -28,6 +38,32 @@
                 <string>%CATEGORY%</string>
                 <key>pkg_path</key>
                 <string>%pkg_path%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>pkg_uploaded == False</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>policy_name</key>
+                <string>%POLICY_NAME%</string>
+                <key>policy_template</key>
+                <string>%RECIPE_DIR%/%POLICY_TEMPLATE%</string>
+                <key>icon</key>
+                <string>%app_icon_path%</string>
+                <key>replace_policy</key>
+                <string>True</string>
+                <key>replace_icon</key>
+                <string>True</string>
             </dict>
         </dict>
     </array>
