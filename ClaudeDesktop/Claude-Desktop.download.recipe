@@ -40,7 +40,7 @@
                 <key>input_path</key>
                 <string>%pathname%</string>
                 <key>requirement</key>
-                <string>identifier "com.anthropic.claudefordesktop" and anchor apple generic and certificate leaf[subject.OU] = "<PRIVATE_TEAM_ID>"</string>
+                <string>identifier "com.anthropic.claudefordesktop" and anchor apple generic and certificate leaf[subject.OU] = "Q6L2SF6YDW"</string>
             </dict>
         </dict>
     </array>
