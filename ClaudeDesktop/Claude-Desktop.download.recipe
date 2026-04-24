@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest Claude Desktop DMG using Anthropic's redirect URL.</string>
+    <key>Identifier</key>
+    <string>local.download.ClaudeDesktop</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Claude Desktop</string>
+        <key>DOWNLOAD_URL</key>
+        <string>https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+                <key>prefetch_filename</key>
+                <true/>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%</string>
+                <key>requirement</key>
+                <string>identifier "com.anthropic.claudefordesktop" and anchor apple generic and certificate leaf[subject.OU] = "<PRIVATE_TEAM_ID>"</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

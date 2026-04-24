@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Builds a PKG installer for Claude Desktop.</string>
+    <key>Identifier</key>
+    <string>local.pkg.ClaudeDesktop</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Claude Desktop</string>
+        <key>PKG_ID</key>
+        <string>com.yourorg.pkg.claude-desktop</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>ParentRecipe</key>
+    <string>local.download.ClaudeDesktop</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>AppPkgCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>app_path</key>
+                <string>%pathname%/Claude.app</string>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+                <key>bundleid</key>
+                <string>%PKG_ID%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

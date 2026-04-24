@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Builds the Claude Desktop PKG and uploads it to Jamf Pro.</string>
+    <key>Identifier</key>
+    <string>local.jamf.ClaudeDesktop</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Claude Desktop</string>
+        <key>CATEGORY</key>
+        <string>Productivity</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>ParentRecipe</key>
+    <string>local.pkg.ClaudeDesktop</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_category</key>
+                <string>%CATEGORY%</string>
+                <key>pkg_path</key>
+                <string>%pkg_path%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
