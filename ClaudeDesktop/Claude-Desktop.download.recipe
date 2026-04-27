@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>Claude Desktop</string>
         <key>DOWNLOAD_URL</key>
-        <string>https://downloads.claude.ai/releases/darwin/universal/1.3883.0/Claude-93ff6cb984386882b4bd9b6bca80d4cf5af8e13b.dmg</string>
+        <string>https://downloads.claude.ai/releases/darwin/universal/1.4758.0/Claude-fb266c24b61d94290860a3945b138d6d249425f6.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>2.3</string>
