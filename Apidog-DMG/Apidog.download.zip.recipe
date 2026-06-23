@@ -9,7 +9,7 @@
 	<string>Downloads the latest version of Apidog from the latest ZIP URL, extracts the enclosed DMG, verifies the app signature, and determines the version.</string>
 
 	<key>Identifier</key>
-	<string>jonmacguru-recipes.download.zip.Apidog</string>
+	<string>jonmacguru-recipes.zip.download.Apidog</string>
 
 	<key>Input</key>
 	<dict>
