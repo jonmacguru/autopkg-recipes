@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.4.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Apidog and uploads the package to Jamf.</string>
+	<string>Downloads the latest version of Apidog, uploads the package to Jamf, and updates the Jamf Pro policy.</string>
 	<key>Identifier</key>
 	<string>jonmacguru-recipes.jamf.Apidog</string>
 	<key>Input</key>
@@ -14,6 +14,10 @@
 		<string>Productivity</string>
 		<key>NAME</key>
 		<string>Apidog</string>
+		<key>POLICY_NAME</key>
+		<string>Apidog</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/JamfPolicyTemplate-noSS.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -43,16 +47,12 @@
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 			<key>Arguments</key>
-			<key>policy_name</key>
-                <string>%NAME%</string>
-                <key>policy_template</key>
-                <string>%RECIPE_DIR%/%POLICY_TEMPLATE%</string>
-                <key>icon</key>
-                <string>%app_icon_path%</string>
-                <key>replace_policy</key>
-                <string>True</string>
-                <key>replace_icon</key>
-                <string>True</string>
+			<dict>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>policy_name</key>
+				<string>%POLICY_NAME%</string>
+			</dict>
 		</dict>
 	</array>
 </dict>
