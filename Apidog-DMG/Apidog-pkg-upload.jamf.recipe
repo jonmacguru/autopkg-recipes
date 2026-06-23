@@ -43,12 +43,16 @@
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 			<key>Arguments</key>
-			<dict>
-				<key>policy_template</key>
-				<string>JamfPolicyTemplate-noSS.xml</string>
-				<key>policy_name</key>
-				<string>%POLICY_NAME%</string>
-			</dict>
+			<key>policy_name</key>
+                <string>%POLICY_NAME%</string>
+                <key>policy_template</key>
+                <string>%RECIPE_DIR%/%POLICY_TEMPLATE%</string>
+                <key>icon</key>
+                <string>%app_icon_path%</string>
+                <key>replace_policy</key>
+                <string>True</string>
+                <key>replace_icon</key>
+                <string>True</string>
 		</dict>
 	</array>
 </dict>
