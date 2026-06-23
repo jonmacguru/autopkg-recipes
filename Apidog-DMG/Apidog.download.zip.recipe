@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Updated to download Apidog from the latest ZIP, extract the versioned DMG, then verify and version the app.</string>
+
+	<key>Description</key>
+	<string>Downloads the latest version of Apidog from the latest ZIP URL, extracts the enclosed DMG, verifies the app signature, and determines the version.</string>
+
+	<key>Identifier</key>
+	<string>jonmacguru-recipes.download.zip.Apidog</string>
+
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Apidog</string>
+	</dict>
+
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+				<key>url</key>
+				<string>https://file-assets.apidog.com/download/Apidog-macOS-arm64-latest.zip</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/*.dmg/Apidog.app</string>
+				<key>requirement</key>
+				<string>identifier "com.apidog.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8554M245SA"</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/*.dmg/Apidog.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
