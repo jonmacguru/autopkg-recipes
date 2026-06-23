@@ -39,6 +39,15 @@
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
 		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>policy_name</key>
+				<string>%POLICY_NAME%</string>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>
