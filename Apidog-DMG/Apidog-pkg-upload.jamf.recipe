@@ -44,6 +44,8 @@
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 			<key>Arguments</key>
 			<dict>
+				<key>policy_template</key>
+				<string>JamfPolicyTemplate-noSS.xml</string>
 				<key>policy_name</key>
 				<string>%POLICY_NAME%</string>
 			</dict>
