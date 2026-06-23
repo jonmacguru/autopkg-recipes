@@ -24,6 +24,12 @@
 		<string>Apidog</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>%RECIPE_DIR%/JamfPolicyTemplate-noSS.xml</string>
+		<key>SELF_SERVICE_DESCRIPTION</key>
+		<string></string>
+		<key>SELF_SERVICE_DISPLAY_NAME</key>
+		<string>Install Latest %NAME%</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
