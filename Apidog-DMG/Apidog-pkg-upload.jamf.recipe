@@ -44,7 +44,7 @@
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 			<key>Arguments</key>
 			<key>policy_name</key>
-                <string>%POLICY_NAME%</string>
+                <string>%NAME%</string>
                 <key>policy_template</key>
                 <string>%RECIPE_DIR%/%POLICY_TEMPLATE%</string>
                 <key>icon</key>
