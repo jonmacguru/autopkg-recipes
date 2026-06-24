@@ -57,7 +57,7 @@
                 <key>policy_name</key>
                 <string>%POLICY_NAME%</string>
                 <key>policy_template</key>
-                <string>%RECIPE_DIR%/%POLICY_TEMPLATE%</string>
+                <string>%POLICY_TEMPLATE%</string>
                 <key>icon</key>
                 <string>%app_icon_path%</string>
                 <key>replace_icon</key>
