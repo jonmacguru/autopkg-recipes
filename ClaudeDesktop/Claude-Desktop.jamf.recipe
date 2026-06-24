@@ -54,7 +54,7 @@
 				<key>policy_template</key>
 				<string>%POLICY_TEMPLATE%</string>
 				<key>policy_name</key>
-				<string>Install Latest %NAME%</string>
+				<string>%POLICY_NAME%</string>
 				<key>pkg_name</key>
 				<string>%NAME%-%version%.pkg</string>
 				<key>replace_policy</key>
