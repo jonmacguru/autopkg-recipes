@@ -50,7 +50,7 @@
             <key>Arguments</key>
             <dict>
                 <key>predicate</key>
-                <string>pkg_uploaded == True</string>
+                <string>pkg_uploaded == False</string>
             </dict>
         </dict>
         <dict>
@@ -62,10 +62,10 @@
                 <string>%POLICY_NAME%</string>
                 <key>policy_template</key>
                 <string>%POLICY_TEMPLATE%</string>
+                <key>pkg_name</key>
+				<string>%NAME%-%version%.pkg</string>
                 <key>icon</key>
                 <string>%app_icon_path%</string>
-                <key>replace_icon</key>
-                <string>True</string>
                 <key>replace_policy</key>
 				<true/>
             </dict>
