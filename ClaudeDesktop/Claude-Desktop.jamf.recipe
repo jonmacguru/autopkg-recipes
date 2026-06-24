@@ -24,6 +24,8 @@
         <string>%NAME%</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
         <string>Installs or reinstalls %NAME% from Self Service.</string>
+        <key>SELF_SERVICE_ICON</key>
+		<string>%NAME%.png</string>
         <key>POLICY_TEMPLATE</key>
         <string>%RECIPE_DIR%/JamfPolicyTemplate-noSS.xml</string>
     </dict>
@@ -42,15 +44,6 @@
                 <string>%CATEGORY%</string>
                 <key>pkg_path</key>
                 <string>%pkg_path%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>StopProcessingIf</string>
-            <key>Arguments</key>
-            <dict>
-                <key>predicate</key>
-                <string>pkg_uploaded == False</string>
             </dict>
         </dict>
         <dict>
