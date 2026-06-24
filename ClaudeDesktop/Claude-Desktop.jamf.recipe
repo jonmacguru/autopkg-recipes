@@ -57,14 +57,14 @@
             <key>Processor</key>
             <string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
             <key>Arguments</key>
-            <dict>
-                <key>policy_name</key>
-                <string>%POLICY_NAME%</string>
-                <key>policy_template</key>
-                <string>%POLICY_TEMPLATE%</string>
-                <key>pkg_name</key>
+           <dict>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>policy_name</key>
+				<string>Install Latest %NAME%</string>
+				<key>pkg_name</key>
 				<string>%NAME%-%version%.pkg</string>
-                <key>replace_policy</key>
+				<key>replace_policy</key>
 				<true/>
             </dict>
         </dict>
