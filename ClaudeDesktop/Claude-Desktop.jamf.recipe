@@ -15,7 +15,7 @@
         <key>POLICY_CATEGORY</key>
         <string>Applications</string>
         <key>POLICY_NAME</key>
-        <string>Install %NAME%</string>
+        <string>Install Latest %NAME%</string>
         <key>SELF_SERVICE_DISPLAY_NAME</key>
         <string>%NAME%</string>
         <key>SELF_SERVICE_DESCRIPTION</key>
