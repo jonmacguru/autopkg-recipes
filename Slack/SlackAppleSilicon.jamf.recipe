@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads the Slack Apple Silicon package to Jamf Pro and creates or updates the Jamf policy.</string>
+	<key>Identifier</key>
+	<string>jonmacguru-recipes.jamf.SlackAppleSilicon</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Slack</string>
+		<key>SOFTWARETITLE</key>
+		<string>Slack</string>
+		<key>PROCESSORTYPE</key>
+		<string>AppleSilicon</string>
+		<key>CATEGORY</key>
+		<string>Productivity</string>
+		<key>POLICY_CATEGORY</key>
+		<string>Productivity</string>
+		<key>POLICY_NAME</key>
+		<string>Slack</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>%RECIPE_DIR%/JamfPolicyTemplate-noSS.xml</string>
+		<key>MinimumVersion</key>
+		<string>2.3</string>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>jonmacguru-recipes.pkg.SlackAppleSilicon</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%CATEGORY%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_category</key>
+				<string>%CATEGORY%</string>
+				<key>pkg_path</key>
+				<string>%pkg_path%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>policy_name</key>
+				<string>%POLICY_NAME%</string>
+				<key>pkg_name</key>
+				<string>%SOFTWARETITLE%_%PROCESSORTYPE%_%version%.pkg</string>
+				<key>replace_policy</key>
+				<true/>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
