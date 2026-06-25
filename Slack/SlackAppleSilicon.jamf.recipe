@@ -19,7 +19,7 @@
 		<key>POLICY_CATEGORY</key>
 		<string>Productivity</string>
 		<key>POLICY_NAME</key>
-		<string>Slack</string>
+		<string>Install Latest Slack</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>%RECIPE_DIR%/JamfPolicyTemplate-noSS.xml</string>
 		<key>MinimumVersion</key>
