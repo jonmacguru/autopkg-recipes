@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Builds a PKG installer for IntelliJ IDEA (Apple Silicon) that installs to /Applications.</string>
+    <key>Identifier</key>
+    <string>jonmacguru.recipes.pkg.IntelliJIDEA</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>IntelliJ IDEA</string>
+        <key>PKG_ID</key>
+        <string>com.jetbrains.intellij</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>ParentRecipe</key>
+    <string>jonmacguru.recipes.download.IntelliJIDEA</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>AppPkgCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>app_path</key>
+                <string>%pathname%/%APP_NAME%</string>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+                <key>bundleid</key>
+                <string>%PKG_ID%</string>
+                <key>version</key>
+                <string>%version%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

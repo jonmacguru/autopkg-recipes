@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads and installs the latest IntelliJ IDEA (Apple Silicon) to /Applications.</string>
+    <key>Identifier</key>
+    <string>jonmacguru.recipes.install.IntelliJIDEA</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>IntelliJ IDEA</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>ParentRecipe</key>
+    <string>jonmacguru.recipes.download.IntelliJIDEA</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>InstallFromDMG</string>
+            <key>Arguments</key>
+            <dict>
+                <key>dmg_path</key>
+                <string>%pathname%</string>
+                <key>items_to_copy</key>
+                <array>
+                    <dict>
+                        <key>source_item</key>
+                        <string>%APP_NAME%</string>
+                        <key>destination_path</key>
+                        <string>/Applications</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

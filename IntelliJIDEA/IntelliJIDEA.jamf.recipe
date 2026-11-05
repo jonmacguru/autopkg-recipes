@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Builds the IntelliJ IDEA (Apple Silicon) PKG, uploads it to Jamf Pro, and creates/updates the policy.</string>
+    <key>Identifier</key>
+    <string>jonmacguru.recipes.jamf.IntelliJIDEA</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>IntelliJ IDEA</string>
+        <key>CATEGORY</key>
+        <string>Testing</string>
+        <key>POLICY_CATEGORY</key>
+        <string>Testing</string>
+        <key>POLICY_NAME</key>
+        <string>IntelliJ IDEA</string>
+        <key>POLICY_TEMPLATE</key>
+        <string>%RECIPE_DIR%/JamfPolicyTemplate-noSS.xml</string>
+        <key>SELF_SERVICE_DISPLAY_NAME</key>
+        <string>%NAME%</string>
+        <key>SELF_SERVICE_DESCRIPTION</key>
+        <string>Installs or reinstalls %NAME% from Self Service.</string>
+        <key>SELF_SERVICE_ICON</key>
+        <string>%NAME%.png</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>ParentRecipe</key>
+    <string>jonmacguru.recipes.pkg.IntelliJIDEA</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>category_name</key>
+                <string>%CATEGORY%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_category</key>
+                <string>%CATEGORY%</string>
+                <key>pkg_path</key>
+                <string>%pkg_path%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>policy_template</key>
+                <string>%POLICY_TEMPLATE%</string>
+                <key>policy_name</key>
+                <string>%POLICY_NAME%</string>
+                <key>pkg_name</key>
+                <string>%NAME%-%version%.pkg</string>
+                <key>replace_policy</key>
+                <true/>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

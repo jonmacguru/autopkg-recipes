@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest IntelliJ IDEA DMG for Apple Silicon using the JetBrains releases API, verifies the code signature, and reads the version.
+
+For Intel Macs, override SEARCH_PATTERN to match the non-aarch64 DMG (the &quot;mac&quot; download in the API response).</string>
+    <key>Identifier</key>
+    <string>jonmacguru.recipes.download.IntelliJIDEA</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>IntelliJ IDEA</string>
+        <key>APP_NAME</key>
+        <string>IntelliJ IDEA.app</string>
+        <key>PRODUCT_CODE</key>
+        <string>IIU</string>
+        <key>SEARCH_URL</key>
+        <string>https://data.services.jetbrains.com/products/releases?code=%PRODUCT_CODE%&amp;latest=true&amp;type=release</string>
+        <key>SEARCH_PATTERN</key>
+        <string>https://download\.jetbrains\.com/idea/[^"]+-aarch64\.dmg</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.3</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%SEARCH_URL%</string>
+                <key>re_pattern</key>
+                <string>%SEARCH_PATTERN%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
+                <key>filename</key>
+                <string>%NAME%-arm64.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/%APP_NAME%</string>
+                <key>requirement</key>
+                <string>identifier "com.jetbrains.intellij" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2ZEFAR8TH3"</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%pathname%/%APP_NAME%/Contents/Info.plist</string>
+                <key>plist_version_key</key>
+                <string>CFBundleShortVersionString</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.haircut.processors/AppIconExtractor</string>
+            <key>Arguments</key>
+            <dict>
+                <key>source_app</key>
+                <string>%pathname%/%APP_NAME%</string>
+                <key>icon_output_path</key>
+                <string>%RECIPE_CACHE_DIR%/Icon-%NAME%.png</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
